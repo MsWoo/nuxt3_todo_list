@@ -23,13 +23,18 @@ function sortLatest() {
   isActive = !isActive
 }
 
+function getDetail(id : number, content : string) {
+  navigateTo("/" + id)
+}
 </script>
 
 <template>
   <section class="w-full m-auto">
     <h1 class="mb-10 text-5xl font-bold text-center">TODO List</h1>
 
-    <form class="mb-5 ml-20 mr-20", @submit.prevent="addToDo()">
+    <form
+        class="mb-5 ml-20 mr-20"
+        @submit.prevent="addToDo()">
       <div class="flex justify-between gap-5">
         <input
             v-model="newToDo"
@@ -57,7 +62,9 @@ function sortLatest() {
             v-for="(list, key) in toDo.toDoList"
             :key="key"
             class="flex justify-between items-center gap-5 mt-5 px-5 py-2 border rounded">
-          <p class="flex gap-5 text-lg">
+          <p
+              class="flex gap-5 text-lg"
+              @click="getDetail(key+1)">
             <span>{{key+1}}.</span>{{list.content}}
           </p>
           <button class="px-5 py-2 bg-slate-500 rounded" @click="toDo.deleteToDo(list.id)">삭제</button>
