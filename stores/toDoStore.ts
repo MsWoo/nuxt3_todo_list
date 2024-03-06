@@ -1,6 +1,10 @@
 import {defineStore} from "pinia";
-import {toDoList} from '@/server/api/toDoList.js'
 
+interface ItoDo {
+  id: number,
+  content: string
+}
+export const toDoList = [] as ItoDo[]
 
 export const useToDoStore = defineStore('toDo', {
   state: () => ({

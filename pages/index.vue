@@ -27,7 +27,7 @@ function sortLatest() {
 
 <template>
   <section class="w-full m-auto">
-    <h1 class="mb-10 text-5xl font-bold text-center">Amir TODO List</h1>
+    <h1 class="mb-10 text-5xl font-bold text-center">TODO List</h1>
 
     <form class="mb-5 ml-20 mr-20", @submit.prevent="addToDo()">
       <div class="flex justify-between gap-5">
